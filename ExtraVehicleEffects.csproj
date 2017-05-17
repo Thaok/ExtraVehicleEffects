@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{368B5208-8396-44A8-A4E2-5A9285CE432F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExtraVehicleEffects</RootNamespace>
+    <AssemblyName>ExtraVehicleEffects</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>targetDir\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ColossalManaged, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\ColossalManaged.dll</HintPath>
+    </Reference>
+    <Reference Include="ICities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\ICities.dll</HintPath>
+    </Reference>
+    <Reference Include="ImprovedPublicTransport">
+      <HintPath>References\IPT\ImprovedPublicTransport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\UnityEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VehicleEffects">
+      <HintPath>..\..\VehicleEffectsHg\VehicleEffects\targetDir\VehicleEffects.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioUtil.cs" />
+    <Compile Include="Effects\DirectCurrentTrainMovement.cs" />
+    <Compile Include="Effects\DieselIdling.cs" />
+    <Compile Include="Effects\TrainReverser.cs" />
+    <Compile Include="Effects\RollingCargoTrainMovementNew.cs" />
+    <Compile Include="Effects\TrainBrakeCargo.cs" />
+    <Compile Include="Effects\TrainCompressor.cs" />
+    <Compile Include="Effects\TrainDayLight.cs" />
+    <Compile Include="Effects\TrainFlangeSquealing.cs" />
+    <Compile Include="Effects\TrainWhistleCompressedAir.cs" />
+    <Compile Include="Effects\TurboDieselIdlingWithHeating.cs" />
+    <Compile Include="Effects\TrainFlangeGrinding.cs" />
+    <Compile Include="Effects\RollingTrainMovementNew.cs" />
+    <Compile Include="Effects\TrainRearLight.cs" />
+    <Compile Include="Effects\SpragueTrainMovement.cs" />
+    <Compile Include="Effects\TrainBrakeDisc.cs" />
+    <Compile Include="Effects\TrainCloseDoors.cs" />
+    <Compile Include="Effects\TurboDieselIdling.cs" />
+    <Compile Include="Effects\TurboDieselTrainMovement.cs" />
+    <Compile Include="Effects\SpragueBell.cs" />
+    <Compile Include="GameExtensions\DirectCurrentEngineSoundEffect.cs" />
+    <Compile Include="GameExtensions\LevelCrossingEffect.cs" />
+    <Compile Include="GameExtensions\TurnTrainEffect.cs" />
+    <Compile Include="GameExtensions\SpragueEngineSoundEffect.cs" />
+    <Compile Include="GameExtensions\TrainFlangeGrindingSoundEffect.cs" />
+    <Compile Include="GameExtensions\TrainBrakingSoundEffect.cs" />
+    <Compile Include="GameExtensions\TurboDieselIdlingSoundEffect.cs" />
+    <Compile Include="GameExtensions\TurboDieselEngineSoundEffect.cs" />
+    <Compile Include="GameExtensions\ComplexEngineSoundEffect.cs" />
+    <Compile Include="ExtraVehicleEffectsMod.cs" />
+    <Compile Include="EffectOptions.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "%25localappdata%25\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\$(TargetFileName)"* /Y /R
+
+xcopy "$(SolutionDir)\Sounds" "%25localappdata%25\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\Sounds" /I /Y /R
+
+xcopy "$(SolutionDir)\AssetBundles" "%25localappdata%25\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\AssetBundles" /I /Y /R</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

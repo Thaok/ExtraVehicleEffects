@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VehicleEffectsDefinition>
+	<Vehicles>
+		<Vehicle name="218_pushPull_4car_silver.218 Push-Pull Regional Train_Data">
+			<Effects>
+				<Effect name="Train Movement" replacement="Turbo Diesel Train Movement">
+				</Effect>
+										
+				<Effect name="Turbo Diesel Idling">
+				</Effect>
+				
+				<Effect name="Train Close Doors">		
+					<RequiredFlags>Leaving</RequiredFlags>
+				</Effect>
+				
+				<Effect name="Vehicle Effect Wrapper" base="Train Light Right">
+					<ForbiddenFlags>Reversed Inverted</ForbiddenFlags>
+					<Position x="0.01" y="3.8" z="-1.2" />
+					<Direction x="0" y="0" z="1" />
+				</Effect>
+
+				<Effect name="Vehicle Effect Wrapper" base="Diesel Smoke">
+					<Position x="0.38" y="4.52" z="3.75" />
+					<Direction x="0.707" y="0.707" z="0" />
+				</Effect>
+				
+				<Effect name="Vehicle Effect Wrapper" base="Diesel Smoke">
+					<Position x="-0.38" y="4.52" z="3.75" />
+					<Direction x="-0.707" y="0.707" z="0" />
+				</Effect>
+				
+			</Effects>
+		</Vehicle>
+		
+		
+		<Vehicle name="218_pushPull_4car_silver.Trailer0">
+			<Effects>
+			    <Effect name="Train Movement" replacement="Rolling Train Movement">
+				</Effect>
+				
+				<Effect name="Train Disc Brake"></Effect>
+				
+				<Effect name="Train Close Doors">		
+					<RequiredFlags>Leaving</RequiredFlags>
+				</Effect>
+				
+			</Effects>	 
+		</Vehicle>	
+		
+		<Vehicle name="218_pushPull_4car_silver.Trailer1">
+			<Effects>
+			    <Effect name="Train Movement" replacement="Rolling Train Movement">
+				</Effect>
+				
+				<Effect name="Train Disc Brake"></Effect>
+				
+				<Effect name="Train Close Doors">		
+					<RequiredFlags>Leaving</RequiredFlags>
+				</Effect>
+				
+			</Effects>	
+		</Vehicle>	
+		
+		<Vehicle name="218_pushPull_4car_silver.Trailer2">
+			<Effects>
+			    <Effect name="Train Movement" replacement="Rolling Train Movement">
+				</Effect>
+								
+				<Effect name="Train Disc Brake"></Effect>
+				
+				<Effect name="Train Close Doors">		
+					<RequiredFlags>Leaving</RequiredFlags>
+				</Effect>
+			
+				<Effect name="Vehicle Effect Wrapper" base="Train Light Right">
+					<Position x="1.06" y="1.37" z="0.2" />
+					<Direction x="0" y="0" z="-1" />
+					<RequiredFlags>Reversed</RequiredFlags>
+				</Effect>
+				<Effect name="Vehicle Effect Wrapper" base="Train Light Right">
+					<Position x="-1.06" y="1.37" z="0.2" />
+					<Direction x="0" y="0" z="-1" />
+					<RequiredFlags>Reversed</RequiredFlags>
+				</Effect>
+				<Effect name="Vehicle Effect Wrapper" base="Train Light Right">
+					<Position x="0" y="3.76" z="0.2" />
+					<Direction x="0" y="0" z="-1" />
+					<RequiredFlags>Reversed</RequiredFlags>
+				</Effect>
+			</Effects>
+		</Vehicle>
+	</Vehicles>
+</VehicleEffectsDefinition>
