@@ -61,18 +61,18 @@ namespace ExtraVehicleEffects
         {
             UIHelperBase group = helper.AddGroup("Generic options");
 
-            var checkbox = group.AddCheckbox("Disable rail service sounds (randomly played at stations etc.). Requires map reload.", true , (bool value) =>
+            var checkbox = group.AddCheckbox("Disable rail service sounds (randomly played at stations etc.). Requires map reload.", silenceStations.value, (bool value) =>
             {
                 silenceStations.value = value;
             });
 
-            group.AddCheckbox("Disable global reverb.", true, (bool value) =>
+            group.AddCheckbox("Disable global reverb.", disableGlobalReverb.value, (bool value) =>
             {
                 disableGlobalReverb.value = value;
                 SetGlobalReverb(!disableGlobalReverb);
             });
 
-            group.AddCheckbox("Set optimal accel./braking for vehicles using the effects. Requires game restart.", true, (bool value) =>
+            group.AddCheckbox("Set optimal accel./braking for vehicles using the effects. Requires game restart.", setOptimalVehicleKinematics.value, (bool value) =>
             {
                 setOptimalVehicleKinematics.value = value;
             });
