@@ -59,7 +59,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="VehicleEffects">
-      <HintPath>..\..\VehicleEffectsHg\VehicleEffects\targetDir\VehicleEffects.dll</HintPath>
+      <HintPath>References\VehicleEffects.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -85,7 +85,6 @@
     <Compile Include="Effects\TurboDieselTrainMovement.cs" />
     <Compile Include="Effects\SpragueBell.cs" />
     <Compile Include="GameExtensions\DirectCurrentEngineSoundEffect.cs" />
-    <Compile Include="GameExtensions\LevelCrossingEffect.cs" />
     <Compile Include="GameExtensions\TurnTrainEffect.cs" />
     <Compile Include="GameExtensions\SpragueEngineSoundEffect.cs" />
     <Compile Include="GameExtensions\TrainFlangeGrindingSoundEffect.cs" />
@@ -102,9 +101,7 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetPath)" "%25localappdata%25\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\$(TargetFileName)"* /Y /R
 
-xcopy "$(SolutionDir)\Sounds" "%25localappdata%25\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\Sounds" /I /Y /R
-
-xcopy "$(SolutionDir)\AssetBundles" "%25localappdata%25\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\AssetBundles" /I /Y /R</PostBuildEvent>
+xcopy "$(SolutionDir)\Sounds" "%25localappdata%25\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\Sounds" /I /Y /R</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
